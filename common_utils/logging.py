@@ -12,7 +12,7 @@ def get_logger(name, level = logging.INFO):
 
     level: The lowest level we want to see (default will be INFO)
     """
-    logger = logging.getLogger('ds2b_cosmosdb')
+    logger = logging.getLogger(name)
     logger.setLevel(level)
 
     if not logger.handlers:
