@@ -46,7 +46,7 @@ def read_cosmosdb_json(spark,connection_string,database_name, collection_name, d
     df = spark.createDataFrame(json_rows, [data_type]) 
     return df
 
-def read_s3_parquet(aws_access_key_id,aws_secret_access_key,path): 
+def read_s3_parquet(spark,aws_access_key_id,aws_secret_access_key,path): 
 
     source_path = (
     f"s3a://{aws_access_key_id}:{aws_secret_access_key}"
