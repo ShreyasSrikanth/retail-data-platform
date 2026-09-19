@@ -19,12 +19,13 @@ def read_jdbc(spark,url,dbtable,user,password, driver="com.microsoft.sqlserver.j
     return df
 
 
-def read_cosmosdb_json(connection_string,database_name, collection_name): 
+def read_cosmosdb_json(spark,connection_string,database_name, collection_name, data_type): 
     '''
     Read a semistructured data from cosmos
     connection_string   : connection string for the source
     database_name       : database name of the source database
     collection_name     : colleection name of the source database
+    data_type           : data type of the source
     '''
      
     from pymongo import MongoClient
@@ -42,7 +43,7 @@ def read_cosmosdb_json(connection_string,database_name, collection_name):
         json_rows.append((json_string,)) 
     
 
-    df = spark.createDataFrame(json_rows, ["json_data"]) 
+    df = spark.createDataFrame(json_rows, [data_type]) 
     return df
 
 def read_s3_parquet(aws_access_key_id,aws_secret_access_key,path): 
