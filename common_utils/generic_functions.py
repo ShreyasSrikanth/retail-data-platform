@@ -10,7 +10,11 @@ def rename_columns(df, columns):
 
     return df
 
+"""
+def drop_duplicates(df, columns): if df is None: raise ValueError("df has no values") missing_columns = [c for c in columns if c  not in df.columns]﻿﻿if missing_columns:﻿raise ValueError("Columns not present")else:﻿ return df.dropDuplicates
 
+
+"""
 
 def safe_cast(df, mapping):
 
