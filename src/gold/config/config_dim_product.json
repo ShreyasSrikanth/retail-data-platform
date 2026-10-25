@@ -1,7 +1,7 @@
 {
     "source": {
         "source_name": "silver_sales",
-        "source_table": "retaildataplatform.silver.sales"
+        "source_table": "retaildataplatform.silver.order_products"
     },
 
     "target": {
@@ -12,6 +12,10 @@
         "generated_product_id_prefix": "PROD_",
         "default_category": "Unknown",
         "default_unit": "Unknown"
+    },
+
+    "rename_columns": {
+        "id": "product_id"
     },
 
     "select_columns": [
